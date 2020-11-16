@@ -1,0 +1,8 @@
+
+
+.hello {
+    text-align: center;
+    margin-top: 50rpx;
+    margin-bottom: 150rpx;
+}
+
