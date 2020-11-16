@@ -38,6 +38,20 @@ export default {
         },
       },
     });
+    this.$api.request({
+      method: "post",
+      url: "http://www.sunfengfeng.com/post",
+      data: {
+        x: "",
+        y: ""
+      },
+      header: {
+        "content-type": "application/json"
+      },
+      success:function(res){
+        console.log(res)
+      }
+    });
   },
 };
 </script>
