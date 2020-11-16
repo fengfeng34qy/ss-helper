@@ -1,1 +1,0 @@
-<view class="home-wrap"><view class="home-text">Vue 驱动的多端开发框架</view><hello compId="{{ (compId ? compId : '$root') + ',0' }}"></hello><towxml nodes="{{ article }}"></towxml></view>
