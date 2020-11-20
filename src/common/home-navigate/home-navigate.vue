@@ -1,11 +1,11 @@
 <template>
-	<view color="home-navigate">
+	<view class="home-navigate">
         <view class="icon-box">
-            <view class="icon-item">
+            <view class="icon-item" @tap="naviateToSpeechMake">
                 <aemp-icons :type="'mic-filled'" :color="'#ff994d'" size="40" />
                 <view>语音合成</view>
             </view>
-            <view class="icon-item">
+            <view class="icon-item" @tap="naviateToSsUtils">
                 <aemp-icons :type="'download-filled'" :color="'#ff994d'" size="40" />
                 <view>自助工具</view>
             </view>
@@ -36,6 +36,16 @@
             aempIcons
         },
 		methods: {
+            naviateToSpeechMake() {
+                this.$api.navigateTo({
+                    url: `../speech-make/speech-make`
+                });
+            },
+            naviateToSsUtils() {
+                this.$api.navigateTo({
+                    url: `../ss-utils/ss-utils`
+                });
+            },
             naviateToDevice() {
                 let deviceId = 'README';
                 this.$api.navigateTo({

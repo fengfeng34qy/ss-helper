@@ -53,6 +53,7 @@ export default {
     homeNavigate
   },
   onLoad() {
+    console.log(this);
     let that = this;
     this.$api.request({
       method: "GET",
@@ -62,14 +63,20 @@ export default {
         "content-type": "application/json"
       },
       success(res){
-        console.log(res)
         that.article = towxml(res.data, "markdown")
+      },
+      fail(err) {
+        console.log(err)
+        wx.showToast({
+          title: err.errMsg,
+          icon: 'none',
+          duration: 3000
+        })
       }
     });
   },
   methods: {
-    change() {},
-    switchActive(index) {}
+    change() {}
   }
 };
 </script>
