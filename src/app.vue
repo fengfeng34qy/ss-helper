@@ -42,6 +42,10 @@ export default {
         return {}
     },
     onLaunch() {
+        wx.cloud.init({
+            env: 'demo01env-d0ykf', //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
+            traceUser: true,
+        })
     },
     onShow() {},
     components: {

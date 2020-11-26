@@ -63,6 +63,29 @@ export default {
         "content-type": "application/json"
       },
       success(res){
+        wx.cloud.callFunction({
+          name: 'ContentCheck',
+          data: {
+            msg: res.data,
+          },
+          success(res) {
+            console.log(res.result)
+            if (res.result.errCode === 87014) {
+              // reslove({CheckCode: 87017, message: '内容违规'})
+            } else {
+              // reslove({CheckCode: 0, message: '成功'})
+            }
+          },
+          fail(error) {
+            // reslove({CheckCode: 87017, message: '通讯失败'})
+            console.log(error)
+          },
+          complete() {
+            // if (!flag) {
+              wx.hideLoading()
+            // }
+          }
+        })
         that.article = towxml(res.data, "markdown")
       },
       fail(err) {

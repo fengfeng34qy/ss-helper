@@ -65,6 +65,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     height: 92rpx;
+    padding: 0 20rpx;
 }
 .rule-end {
     margin: 20rpx 0;

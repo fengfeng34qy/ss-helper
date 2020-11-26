@@ -1,6 +1,6 @@
 <template>
 	<view class="speech-make">
-        <view>
+        <view class="radio-box">
             <radio-group @change="radioChange" style="text-align:center;">
                 <label v-for="(item, index) in List" wx:key="index">
                     <radio :value="item.value" :checked="item.checked" />
@@ -8,7 +8,7 @@
                 </label>
             </radio-group>
         </view>
-        <view>播放速度</view>
+        <view style="margin:0 40rpx;">播放速度</view>
         <view>
             <slider 
                 :value="spd"
@@ -18,9 +18,9 @@
                 min="0"
                 show-value />
         </view>
-        <view>请在下面输入要合成的语音文字</view>
-        <view>
-            <textarea class="aemp-textarea" :value="value" @input="inInput" :auto-focus="true" maxlength="50" placeholder="最多输入50字内容." />
+        <view style="margin:0 40rpx;">请在下面输入要合成的语音文字</view>
+        <view class="flex">
+            <textarea class="textarea" :value="value" @input="inInput" :auto-focus="true" maxlength="50" placeholder="最多输入50字内容." />
         </view>
         <view style="display:flex;justify-content:space-between;padding:0 20px;">
             <view><button type="default" class="mb15" @tap="onlinePlay">在线播放</button></view>
@@ -150,3 +150,18 @@ export default {
     }
 }
 </script>
+<style scoped>
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40rpx;
+}
+.radio-box {
+    padding: 40rpx 0;
+}
+.textarea {
+    border: 2rpx solid #ccc;
+    width: 100%;
+}
+</style>
